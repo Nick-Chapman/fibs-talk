@@ -1,0 +1,382 @@
+
+----------------------------------------------------------------------
+"Introduce myself"
+
+My name.
+School with Mr. Greaves
+Manchester University
+I work as a software engineer.
+Love programming.
+
+----------------------------------------------------------------------
+"A day with programming is a day wasted"
+
+Maths vs Programming.
+Studied Computer science. Think about programs & programming.
+Software Engineering. Making useful programs, that work!
+
+What should I talk about?
+Give you some sense of my passion for programming.
+Show mathmatical thinking about our programs is very important.
+Complexity theory. Study of how long is takes programs to run.
+
+Constant (adding). Linear (searching). Worse...
+
+Take as our main example, a sequence of number you may be familiar with.
+
+----------------------------------------------------------------------
+"Fibonacci Sequence"
+
+Who has seen or heard of this before?
+See the pattern?
+
+
+----------------------------------------------------------------------
+"Rule for the next elemnt of the sequence"
+
+Each element is computed by adding the two numbers before it.
+Starting with 0,1 (or sometimes people start at 1,1)
+fib(1) = 1, fib(2) = 1, fib(3) = 2.... fib(5) = 5, fib(6) = 8 ...
+
+Discovered/Invented in 1202s by "Fibonacci"
+while he investigated a problem about how fast rabbits breed!
+
+----------------------------------------------------------------------
+"Bunny pairs"
+
+Start with a single pair. (1)
+Can breed after 1 month. (1)
+At end of 2nd month give birth to a new pair. (2)
+
+Assuming rabbits never die,
+and that female always produces one new pair every month..
+How many pairs will there be after one year?
+
+Next month, original pair produce again, but not the 2nd pair (3)
+But the next month, both the first two pair can reproduce (5)
+And so on...
+
+Counting pairs in each month, we see the fibonacci numbers appearing.
+Why?
+
+
+OK. So why else do we care about the Fibonacci numbers?
+Because Mathmaticians are geeks...
+
+----------------------------------------------------------------------
+"The On-Line Encyclopedia of Integer Sequences"
+
+A database of sequences. Thousands of them. Each has a name/number.
+The Fibonacci numbers are A000045
+
+Loads of other sequences... for example "Perfect numbers"
+A number is perfect if equal the sum of its divisors
+I only know the first two elements: 6,28
+6 = 1+2+3
+28 = 1+2+4+7+14
+
+Mr Greaves. Any more?... (496, 8128).. A000396
+
+Anyway, moving one.... Why else do we care...
+
+----------------------------------------------------------------------
+"Ratio sequence"
+
+ratio of successive terms... 1,1 then 1,2 then 3,2...
+the second term is alway bigger that the first, so answer bigger that 1
+not sequence of fractions... starts bouncing: 1, 2, 1&1/2, 1&2/3
+then seems too start settling down.
+
+Does it ever reach a particular numbers?...
+Anyone know?
+
+----------------------------------------------------------------------
+"Golden ratio" 1.618...
+
+Answer is yes. but it's not a nice simple number.
+If you write it out in decimal you will never reach the end of the digits.
+Anyone know another number like this?... PI
+And like Pi, the golden ration is regarded as very special.
+A constant of nature.
+And becuse it's so special, like PI, it has a name & a symbol...
+
+----------------------------------------------------------------------
+"Phi symbol"
+
+Phi. (spelt P.H.I, pronounced with an F) looks like this.. or this...
+
+"Another Phi symbol"
+"Phi Ring"
+
+Why do people care about Phi?
+Some people thing that it crops up in various places in nature...
+
+----------------------------------------------------------------------
+"Spiral numbers"
+"Six pics"
+"Ear and Face"
+"Sunflower"
+"Galaxy"
+
+and art...
+
+----------------------------------------------------------------------
+"Mona lisa"
+"Donald"
+
+- gettting a bit silly
+
+anyway
+pretty soon want to get to some programming....
+One last thing before we move on...
+See another way to define & compute Phi
+
+----------------------------------------------------------------------
+"Phi Ratio equation"
+
+explain a/b = a+b/b
+can be solved... ask your teacher...
+
+get a closed form definition (not the limit of a sequence)
+which is...
+
+----------------------------------------------------------------------
+"Phi Closed form"
+
+square-root-of-5 + 1 divided by 2
+check on calculator
+
+"Phi value again"
+
+summary of golden ratio
+
+"Golden Ratio Golden Slide"
+
+return to fibonacci numbers... from which the golden ratio was generated
+
+----------------------------------------------------------------------
+"First 29"
+
+
+10th... 55
+20th... 6765
+
+so... how would we go about calculating more and more terms of this sequence
+say I want the... 200th element.
+
+Could we do that on paper?
+How long would it take us?
+Do you think we could do it without making mistakes?
+Probably not.
+And it would be pretty tedious.
+
+So, what else could we do?....
+
+Of course write a program!
+
+----------------------------------------------------------------------
+"a wasted day again"
+
+so, lets write some python...
+has anyone used this before?...
+(Yes. Good! You can help me if I make mistakes. It's not my normal language)
+
+But what are we going to program?
+
+----------------------------------------------------------------------
+"Maths seq rule"
+
+Anything missing?
+
+----------------------------------------------------------------------
+"Maths seq rule with basecase"
+
+subscripts mean element number in the sequence.
+
+but we can also thing about the fibonacci numbers as a functions.
+or function machines.
+In goes the element number (say 7) out comes 13. In goes 10, out comes 55
+
+This is often shown in matchs with a small change in notation...
+
+----------------------------------------------------------------------
+"Maths function rule"
+
+"f(n)" means function "f" applied to inpuut "n"
+The output here is given by cases. 2 bases cases, and the "recursive" case.
+(recursion is word programmes use when a function makes reference to itself)
+
+(aside: notice the mistake on this slice .. lower vs upercase "f"!)
+
+----------------------------------------------------------------------
+"General function machine"
+
+take inputs. do something. generate some outputs.
+or... question -> answer machine.
+
+Might remember simple function machines.. such as x2
+But in general functions can do anything.
+Inputs to outputs.
+Can take more than one input. addition is a function from two numbers, to a result.
+
+usually in a programming langauge there are a small set of builtin fuctins
+say "+", "*", "<" -- two numbers -> yes/no
+but not everything can be built in.
+the programmare is able to define new functions out of old functions
+and working this way we can define functions to do anything we like.
+
+ok, lets get coding....
+
+
+----------------------------------------------------------------------
+"a day wasted again"
+
+
+def square(x):
+-- 1st function, syntax. "def", "return", ":"
+-- question/answer
+
+def diff_squares(a, b):
+-- can use one function when we define another
+
+def absolute_difference(a,b):
+-- function has to make a choice
+-- "<" compare numbers, which isbigger/? -> yes/no (boolean - true/false)
+-- select with "if"
+
+def factorial(n):
+- recursion
+- must have a base case!
+
+
+ok, ready to define "fib"
+check the definition again... refresh our memory...
+
+
+----------------------------------------------------------------------
+"match function def again"
+
+
+program fib...
+talk about base cases & recursion
+try it out fib(10), fib(20)
+
+cool
+ok, so we could just go for fib(200)
+or better still, lets ask for all the numbers from 1...200
+see it slowing in the 30s...
+
+hmm.
+who wants to wait?
+who thinks we'll get to 200 if we wat long enough?
+
+hmm,
+just how slow is it getting
+
+add time
+-- number of seconds since 1st Jan 1970. unix clocks!
+- no problem, duration is just the difference between two times.
+
+add two time calls and print to the loop.
+
+hmm, now we can see how bad the slowdown is more objectively...
+anyone see a pattern...
+is it getting slower by an additive factor...
+or a multiplicative factor...?
+
+lets do some sums...
+
+fib(20) / fib(15)
+fib(25) / fib(20)
+fib(30) / fib(25)
+
+expect to see about 11.
+
+turns out this is phi^5
+calculator.
+
+each extra step is a factor of phi = 1.6...
+
+any multiplicative factor is bad.
+if the factor is 2, this would mean that each step take twce the tiem of the prev
+1.6 is not so bad, but still it's pretty devistating.
+
+lets do an estimate
+
+fib(35) takes?
+so for fib(4), multiply by 11... get ?
+actually measure... wow, very close!
+
+so what about fib(50)... x11 x11
+
+what about fib(100).... millions of years
+crazy
+
+what about fib(200) ???
+will it even compute before life on earth ends?
+
+----------------------------------------------------------------------
+"Sun in 7 billion years"
+
+so fib(100) takes x million years
+we have loads more time than this... y thousand times more
+
+how many more steps can we do in this 1000x more time?
+well, no many!
+because we have a multiplicative factor
+we know phi^5 is 11
+phi^10 is 123
+
+so phi^17 is y000 ish
+
+so we get to 117 steps before the sun consumes the earth
+
+
+hmm, something is not right here!
+clearly there is something very wrong with our program
+
+when we thought about doing the fib calc by hand
+we imagined a very simple process
+keep adding pair of numbers to get the next number
+
+----------------------------------------------------------------------
+"Addition rule many steps"
+
+but clearly that is not what our program is doing.
+
+think in terms of questions and answers..
+
+questions are either base case, or ask more questsions...
+but the program keeps asking the same questions
+that is what cause the multiplicative factor
+
+and causes the runtime of our program to become exponential
+
+----------------------------------------------------------------------
+"fib(5) tree picture"
+
+talk about it
+
+----------------------------------------------------------------------
+"a day wasted"
+
+ok, so fix our program....
+test it
+off by 1
+fix
+run only the quick
+wow. much quicker!
+
+----------------------------------------------------------------------
+"summary"
+
+what is my summary???
+
+somtimes getting a faster computer, or waiting longer
+is not the solution to a slow program
+
+sometimes a program is slow in a fundermenatl way
+
+and we need to understand how our program executes
+
+and then we can write a quicker version!
