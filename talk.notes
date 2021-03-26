@@ -1,5 +1,4 @@
 
-
 ----------------------------------------------------------------------
 "Introduce myself"
 
@@ -12,8 +11,7 @@ I work as a software engineer.
 "A day with programming is a day wasted"
 
 Love programming.
-This talk will Sowshow some links between maths and programming.
-
+This talk will show some links between maths and programming.
 Take as our main example, a sequence of numbers you may be familiar with.
 
 ----------------------------------------------------------------------
@@ -22,9 +20,8 @@ Take as our main example, a sequence of numbers you may be familiar with.
 Who has seen or heard of this before?
 See the pattern?
 
-
 ----------------------------------------------------------------------
-"Rule for the next elemnt of the sequence"
+"Rule for the next element of the sequence"
 
 Each element is computed by adding the two numbers before it.
 Starting with 0,1 (or sometimes people start at 1,1)
@@ -33,15 +30,15 @@ fib(1) = 1, fib(2) = 1, fib(3) = 2.... fib(5) = 5, fib(6) = 8 ...
 Discovered/Invented in 1202s by "Fibonacci"
 while he investigated a problem about how fast rabbits breed!
 
-There are lots of intersting things related to the fibonacci sequence
-Today we are going to focus on the ration between successive elemets of the sequence.
+There are lots of interesting things related to the Fibonacci sequence
+Today we are going to focus on the ration between successive elements of the sequence.
 What do I mean by this?
 
 ----------------------------------------------------------------------
 "Ratio sequence"
 
 ratio of successive terms... 1,1 then 1,2 then 3,2...
-the second term is alway bigger that the first, so answer bigger that 1
+the second term is always bigger that the first, so answer bigger that 1
 not sequence of fractions... starts bouncing: 1, 2, 1&1/2, 1&2/3
 then seems too start settling down.
 
@@ -56,7 +53,7 @@ If you write it out in decimal you will never reach the end of the digits.
 Anyone know another number like this?... PI
 And like Pi, the golden ration is regarded as very special.
 A constant of nature.
-And becuse it's so special, like PI, it has a name & a symbol...
+And because it's so special, like PI, it has a name & a symbol...
 
 ----------------------------------------------------------------------
 "Phi symbol"
@@ -79,29 +76,26 @@ Some people think this ration crops up throughout nature...
 and art...
 
 ----------------------------------------------------------------------
-"Mona lisa"
+"Mona Lisa"
 "Donald"
 
-- gettting a bit silly
+- getting a bit silly
 
 ----------------------------------------------------------------------
 "Phi value again"
 phi = 1.618...
 
 Summary. This is the value of the golden ratio.
-The ratio between successiive terms of the fib sequence. (Or multiplicative factor.)
+The ratio between successive terms of the fib sequence.
 
 Anyway. Lets get back to the Fibonacci sequence itself...
-(from which the golden ration is generated)
 First. Lets recap how it is generated
 
 ----------------------------------------------------------------------
 "Maths seq rule"
 
-subscripts mean element number in the sequence.
-
-Anything missing?
-basecase!
+Subscripts mean element number in the sequence.
+Anything missing? -- basecase!
 
 ----------------------------------------------------------------------
 "First 29"
@@ -118,164 +112,104 @@ Do you think we could do it without making mistakes?
 Probably not.
 And it would be pretty tedious.
 
-So, what else could we do?....
-
-Of course write a program!
+So, what else could we do?.... Of course write a program!
 
 ----------------------------------------------------------------------
 "a wasted day again"
 
-open python interpreter
-
-one way of thinking about programming is evaluating functions
-basic functions are already available to us; but we can define new functions too
-what is a function?
+open python interpreter.
+programming is about computing with functions.
+a function is a define rule from inputs to outputs
+basic things like addition and multiplication are functions.
+but so are fib numbers: a function from sequence number to value
 
 ----------------------------------------------------------------------
 "Trivial (x2) function example"
 "General function machine"
-or... question -> answer machine.
 
-Might remember simple function machines.. such as x2
-But in general functions can do anything.
-Inputs to outputs.
-Can take more than one input. addition is a function from two numbers, to a result.
+When we define functions as programs. We can ask question. And get answers
++, *, ==
 
-run examples in interpreter: + etc
-explain fib is a function too. From position in sequence to value: 5 -> 5, 10 -> 55 etc
-
-code fib (TODO: code with two basecases? 0/1 or 1/1 ?)
+CODE FIB
+code fib with two basecases 0/1
 talk about base cases & recursion
 
-load in interpreter: test: fib: 10, 20,30 etc
-code loop. (TODO: upto exactly what value?)
+load in interpreter: test: fib 0,1,2...
+code loop. range(1,38). biggest 37
 
 slow; not good;
 who wants to wait?
-who thinks we'll get to 200 if we wat long enough?
+who thinks we'll get to 200 if we wait long enough?
 
 how slow? timings - explain time... diffs
 make loop be self timing.
+fib(37) ... 4.96s
+
 anyone notice anything about times?...
+how much it slow done by each step. not a constant amount
+but by a multiplicative factor
+how big is that factor... seems less than 2
 
-confim ratio between terms 5 part, 10 apart...
-make prediction for future term (TODO: which one -- want it to be about 20 second)
-TODO: how to easily run/time just that one value
-confirm matches prediction!
+do some divisions to be more precise...
+pick a couple to divide... ask audience to do division?
+or do it on python calc.
 
-ok, now look at time for fib(50), fib(100) etc
+hopefully get answers close to phi
+make prediction for future term: fib(40)... based on fib(37) & PHI
+4.96 * 1.618 ** 3 --> 21s
+time it on watch... get audience to time it on watch
+so, it seems that for some reason the golden ration has shown up
+its the multiplicative factor in time to compute a step vs the next step
 
-old notes...
-
-    hmm,
-    just how slow is it getting
-
-    add time
-    -- number of seconds since 1st Jan 1970. unix clocks!
-    - no problem, duration is just the difference between two times.
-
-    add two time calls and print to the loop.
-
-    hmm, now we can see how bad the slowdown is more objectively...
-    anyone see a pattern...
-    is it getting slower by an additive factor...
-    or a multiplicative factor...?
-
-    lets do some sums...
-
-    fib(20) / fib(15)
-    fib(25) / fib(20)
-    fib(30) / fib(25)
-
-    expect to see about 11.
-
-    turns out this is phi^5
-    calculator.
-
-    each extra step is a factor of phi = 1.6...
-
-    any multiplicative factor is bad.
-    if the factor is 2, this would mean that each step take twce the tiem of the prev
-    1.6 is not so bad, but still it's pretty devistating.
-
-    lets do an estimate
-
-    fib(35) takes?
-    so for fib(4), multiply by 11... get ?
-    actually measure... wow, very close!
-
-    so what about fib(50)... x11 x11
-
-    what about fib(100).... millions of years
-    crazy
-
-    what about fib(200) ???
-    will it even compute before life on earth ends?
+how long for fib(50), fib(100) ?
+fib(50) : 1.618 ** 10 * 21 /60 --> 43 minutes
+fib(100) : 1.618 ** 60 * 21 /60 /60 /24 /365 --> 2.3 million years
 
 ----------------------------------------------------------------------
 "Sun in 7 billion years"
 
-so fib(100) takes x million years
-we have loads more time than this... y thousand times more
+who know what happens in 7 billion year? sun goes supa-nova
+and maybe consumes the earth
 
-how many more steps can we do in this 1000x more time?
-well, no many!
-because we have a multiplicative factor
-we know phi^5 is 11
-phi^10 is 123
+so that 3000x times even longer
+which fib term do you think we could get to by then? -- 117
 
-so phi^17 is y000 ish
+ok, so it seems fib(200) is out of the question
 
-so we get to 117 steps before the sun consumes the earth
+but hang on. aren't computer supposed to be fast?!
+we reckoned we could do it on paper in an afternoon
+why is out program taking so long??
 
-
-hmm, something is not right here!
-clearly there is something very wrong with our program
-
-when we thought about doing the fib calc by hand
-we imagined a very simple process
-keep adding pair of numbers to get the next number
-
-----------------------------------------------------------------------
-"Addition rule many steps"
-
-but clearly that is not what our program is doing.
-
-think in terms of questions and answers..
-
-questions are either base case, or ask more questsions...
-but the program keeps asking the same questions
-that is what cause the multiplicative factor
-
-and causes the runtime of our program to become exponential
+In a nutshell: it is asking the same question over and over again..
 
 ----------------------------------------------------------------------
 "fib(5) tree picture"
 
-talk about it (TODO: can I find an even better picture)
-
+talk about it... repeated work
+at each level the size of the tree is almost double the size of the level below
+not quite double... but 1.618x the size !!
+that magic golden ration that shows up everywhere
 
 ----------------------------------------------------------------------
-"a day wasted"
+"Addition rule many steps"
 
+This is how humans compute the fibonacci nunbers.
+Can we make a program that uses teh same approach?.. yes
 ok, so fix our program....
-
 code loop... compare values... run.. quick!
 
 ----------------------------------------------------------------------
-"summary"
+"EXponential vs Linear"
 
-As well as writing programs to compute mathmatical functions
+As well as writing programs to compute mathematical functions.
+We can use maths to think about our programs. In particular, how long they will take to run.
 
-We can use mats to think about our programs. In particular, how long they will take to run
+Tahe branch of computer science dedicated to thinking about this is called "Complexity Theory"
 
-There is a whole branch of computer science dedicated to thinking about this
-called "Complexity Theory"
-
-What I wanted to demonstrate to you today is that if you have an algorithm with bad complexity
-And in this case we say the complexity is "exponential"
-It really doesn't matter how fast your computer is, or how long you wait.
+Today we saw that if you have an algorithm with "exponential" complexity
+it really doesn't matter how fast your computer is, or how long you wait.
 Very soon you will reach a value you cannot compute.
+But an algorithm with "Linear" complexity can compute very quickly.
 
-But if you write a better algorithm (in our case the revised algorithm is "Linear")
-Then computers allow us to compute enormous things very quickly
+----------------------------------------------------------------------
+"A day wasted one last time"
