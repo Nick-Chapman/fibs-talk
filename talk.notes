@@ -4,21 +4,27 @@
 
 Thank you for inviting me here today.
 My name.
-School with Mr. Greaves. Same maths class. Did our 'O' levels (what they call GCSEs now!)
+School with Mr. Greaves.
+Same maths class. Did our 'O' levels (what they call GCSEs now!)
 Manchester University: studiesd Maths and Computer Science.
 After that I started work as a software engineer, or programmer.
-And for my entire career, at a variety of different places, I've worked as a programmer.
-Which I love.
+And for my entire career, at a variety of different places,
+I've worked as a programmer. Which is great. Because you see...
 
 Love programming. My job and sometimes my hobby.
 
 Computer Science. What is that? I don't really know before university...
 3 aspects
-- Maths: Using maths to study our programs. Are they correct? How fast will they run?
-- Science: Measuring and observing our program. Like a Physicist might study forces of nature.
-- Engineering: Using skill and experience to craft s/w artifacts. Like a bridge builder, or author.
+- Maths: Using maths to study our programs.
+    Are they correct? How fast will they run?
+- Science: Measuring and observing our program.
+    Like a Physicist might study forces of nature.
+- Engineering: Using skill and experience to craft s/w artifacts.
+    Like a bridge builder, or author.
 
 Hopefully today we'll get a chance to see all 3 of these aspects.
+
+Any questions so far?
 
 ----------------------------------------------------------------------
 "Fibonacci Sequence"
@@ -115,6 +121,12 @@ Anything missing? -- basecase!
 10th... 55
 20th... 6765
 
+----------------------------------------------------------------------
+"Trivial (x2) function example"
+"General function machine"
+
+Another way to think about a sequence: Function from position to value.
+
 so... how would we go about calculating more and more terms of this sequence
 say I want the... 200th element.
 
@@ -124,20 +136,19 @@ Do you think we could do it without making mistakes?
 Probably not.
 And it would be pretty tedious.
 
-So, what else could we do?.... Of course write a program!
+If had defined a program to compute the fib fuction, we could use it.
 
 ----------------------------------------------------------------------
 "a wasted day again"
+
+
+Ok. lets do some programming...
 
 open python interpreter.
 programming is about computing with functions.
 a function is a define rule from inputs to outputs
 basic things like addition and multiplication are functions.
 but so are fib numbers: a function from sequence number to value
-
-----------------------------------------------------------------------
-"Trivial (x2) function example"
-"General function machine"
 
 When we define functions as programs. We can ask question. And get answers
 +, *, ==
@@ -192,6 +203,8 @@ but hang on. aren't computer supposed to be fast?!
 we reckoned we could do it on paper in an afternoon
 why is out program taking so long??
 
+Anyone have an idea?
+
 In a nutshell: it is asking the same question over and over again..
 
 ----------------------------------------------------------------------
@@ -206,17 +219,19 @@ that magic golden ration that shows up everywhere
 "Addition rule many steps"
 
 This is how humans compute the fibonacci nunbers.
-Can we make a program that uses teh same approach?.. yes
+Can we make a program that uses the same approach?.. yes
 ok, so fix our program....
 code loop... compare values... run.. quick!
 
 ----------------------------------------------------------------------
-"EXponential vs Linear"
+"Exponential vs Linear"
 
 As well as writing programs to compute mathematical functions.
-We can use maths to think about our programs. In particular, how long they will take to run.
+We can use maths to think about our programs.
+In particular, how long they will take to run.
 
-Tahe branch of computer science dedicated to thinking about this is called "Complexity Theory"
+The branch of computer science dedicated to thinking about this
+is called "Complexity Theory"
 
 Today we saw that if you have an algorithm with "exponential" complexity
 it really doesn't matter how fast your computer is, or how long you wait.
